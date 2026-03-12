@@ -1,0 +1,320 @@
+/* Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: black;
+  background-size: cover;
+  height: 100%;
+  overflow: auto;
+  font-size: 18px;
+}
+
+/* Header */
+.app-header {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0 15px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #210eed;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+  letter-spacing: 1.2px;
+  animation: fadeDown 1s ease forwards;
+  opacity: 0;
+}
+
+/* App layout */
+.app {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  height: auto;
+  padding: 20px;
+  background: url("../public/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4); /* Lighter overlay to let background show */
+  z-index: 0;
+}
+
+.app > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  margin-right: 20px;
+  padding: 30px;
+  border-radius: 20px;
+  color: black;
+  background: rgba(255, 255, 255, 0.001);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  font-size: 20px;
+}
+
+.sidebar ul li {
+  padding: 14px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #210eed;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #190254;
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(0, 150, 136, 0.1);
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 30px;
+  border-radius: 20px;
+  overflow-y: auto;
+  color: black;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  animation: fadeIn 1.5s ease;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1s forwards;
+}
+
+.section.delay {
+  animation-delay: 0.5s;
+}
+
+.section.delay-2 {
+  animation-delay: 1s;
+}
+
+.section h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #210eed;
+  margin-bottom: 12px;
+  text-shadow: none;
+  border-left: 5px solid #210eed;
+  padding-left: 12px;
+}
+
+/* Alert Box */
+.alert-box {
+  background-color: #f0f0f0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-left: 4px solid #210eed;
+}
+
+/* Image/Video Box */
+.image-box {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+.image-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar */
+.main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+/* Detected Name */
+.detected-name {
+  margin-top: 14px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #210eed;
+  text-align: center;
+  text-shadow: none;
+  animation: fadeIn 1s ease-in-out, pulse 2s infinite ease-in-out;
+  letter-spacing: 1px;
+}
+
+/* Video Box */
+.video-box {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-top: 60px !important; /* adjust the value as needed */
+
+}
+
+/* Live Badge */
+.live-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px red;
+  animation: pulseLive 1.5s infinite;
+}
+
+@keyframes pulseLive {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+/* Container to hold live feed and heatmap side-by-side */
+.live-risk-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+   /* changed from flex-start to center */
+  min-height: 500px; 
+  border: 0.5px solid rgb(226, 222, 222);/* optional: gives enough height for centering */
+}
+
+
+/* Live camera feed container */
+.live-camera-section {
+  flex: 1 1 45%; /* take about 45% width */
+  min-width: 300px;
+}
+
+/* Risk prediction container */
+.risk-prediction-section {
+  flex: 1 1 50%; /* take about 50% width */
+  min-width: 320px;
+  max-width: 600px; /* limit max width */
+}
+
+/* Adjust video box size */
+.live-camera-section .video-box {
+  margin-top: 30px; /* or increase as needed */
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Reduce heatmap max width for better fit */
+.risk-prediction-section > div {
+  max-width: 100% !important;
+}
+
+/* Ensure sections keep some margin at bottom */
+.live-camera-section,
+.risk-prediction-section {
+  margin-bottom: 20px;
+}
+
+/* Optional: smaller font for heatmap labels for better fit on smaller screen */
+.risk-prediction-section table th,
+.risk-prediction-section table td {
+  font-size: 0.9em;
+}
+
+/* Reduce heatmap size */
+.risk-prediction > div:last-child {
+  max-width: 70% !important; /* reduce width to 80% of container */
+  overflow-x: auto;
+  transform: scale(0.7);
+  transform-origin: top left;
+}
+
+/* Optional: reduce spacing around the heatmap */
+.risk-prediction h3, 
+.risk-prediction .alert-box {
+  margin-bottom: 8px;
+}
