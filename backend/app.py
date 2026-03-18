@@ -27,10 +27,10 @@ CORS(app)
 model = YOLO(os.path.join("yolov8", "best.pt"))
 
 # IP camera stream (update if your camera uses a different path)
-ip_camera_url = "http://192.168.124.50:8080/video"
+ip_camera_url = "http://192.168.133.6:8080/video"
 
 # IP camera audio stream (set to your camera's audio/rtsp stream if different)
-ip_camera_audio_url = "http://192.168.124.50:8080/audio.wav"
+ip_camera_audio_url = "http://192.168.133.6:8080/audio.wav"
 
 # PANNs assets
 PANNS_DATA_DIR = os.path.join(os.path.expanduser("~"), "panns_data")

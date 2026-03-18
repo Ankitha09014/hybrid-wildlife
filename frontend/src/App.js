@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 import axios from "axios";
+import Settings from "./Settings";
+import Contacts from "./Contacts";
+import Help from "./Help";
 
 function App() {
   const [detected, setDetected] = useState([]);
@@ -13,7 +16,7 @@ function App() {
   const [history, setHistory] = useState([]); // Detection history
   const audioRef = useRef(null);
   const previousDetectedRef = useRef([]);
-  const ipCameraStreamUrl = "http://192.168.124.50:8080/video";
+  const ipCameraStreamUrl = "http://192.168.133.6:8080//video";
   const dangerousAnimals = [
     "tiger",
     "leopard",
@@ -180,10 +183,36 @@ function App() {
         <div className="sidebar glass slide-in-left">
           <ul>
             <li onClick={() => handleMenuClick("home")} style={{ cursor: "pointer", fontWeight: activeView === "home" ? "bold" : "normal" }}>Home</li>
-            <li onClick={() => handleMenuClick("systemStatus")} style={{ cursor: "pointer", fontWeight: activeView === "systemStatus" ? "bold" : "normal" }}>System Status</li>
-            <li>Settings</li>
-            <li>Help</li>
-            <li>Contacts</li>
+            <li onClick={() => handleMenuClick("systemStatus")} style={{ cursor: "pointer", fontWeight: activeView === "systemStatus" ? "bold" : "normal" }}>Detection History</li>
+             <li
+        onClick={() => handleMenuClick("settings")}
+        style={{
+          cursor: "pointer",
+          fontWeight: activeView === "settings" ? "bold" : "normal"
+        }}
+      >
+        Settings
+      </li>
+
+      <li
+        onClick={() => handleMenuClick("help")}
+        style={{
+          cursor: "pointer",
+          fontWeight: activeView === "help" ? "bold" : "normal"
+        }}
+      >
+        Help
+      </li>
+
+      <li
+        onClick={() => handleMenuClick("contacts")}
+        style={{
+          cursor: "pointer",
+          fontWeight: activeView === "contacts" ? "bold" : "normal"
+        }}
+      >
+        Contacts
+      </li>
           </ul>
         </div>
 
@@ -191,7 +220,7 @@ function App() {
           {/* System Status View */}
           {activeView === "systemStatus" && (
             <div className="section">
-              <h3>📊 System Status - Detection History</h3>
+              <h3>📊 Detection History</h3>
               <p style={{ marginBottom: "15px", color: "#666" }}>Showing last 5 detected animals from database:</p>
               {history.length === 0 ? (
                 <div className="alert-box">No detection history available</div>
@@ -383,6 +412,18 @@ function App() {
           </div>
             </>
           )}
+         {activeView === "settings" && (
+    <Settings />
+  )}
+
+  {activeView === "help" && (
+    <Help />
+  )}
+
+  {activeView === "contacts" && (
+    <Contacts />
+  )}
+
         </div>
       </div>
     </div>

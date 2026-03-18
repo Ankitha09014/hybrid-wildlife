@@ -116,7 +116,7 @@ body, html {
 .section h3 {
   font-size: 28px;
   font-weight: 600;
-  color: #210eed;
+  color: black;
   margin-bottom: 12px;
   text-shadow: none;
   border-left: 5px solid #210eed;
@@ -317,4 +317,65 @@ body, html {
 .risk-prediction h3, 
 .risk-prediction .alert-box {
   margin-bottom: 8px;
+}
+/* Page container */
+.page-container {
+  padding: 30px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Title */
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Card design */
+.card-box {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Button */
+.save-btn {
+  background: #4a6cf7;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: #3248c5;
+}
+
+/* List style */
+.info-list {
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
 }
