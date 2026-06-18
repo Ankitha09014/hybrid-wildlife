@@ -1,4 +1,7 @@
 Hybrid AI for Preventing Wild Animal Intrusions
+
+
+
 Overview
 
 Hybrid AI for Preventing Wild Animal Intrusions is an intelligent monitoring system designed to reduce human-wildlife conflict by detecting and predicting animal intrusions in real time. The system combines computer vision and sound-based analysis to identify animals approaching agricultural or residential areas and generate early alerts.
