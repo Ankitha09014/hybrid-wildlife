@@ -117,12 +117,6 @@ The backend was developed using Flask and performs the following functions:
 * SMS and email notification system.
 * Multi-camera monitoring support.
 
----
 
-## Author
-
-Ankitha
-
-B.Tech – Artificial Intelligence and Data Science
 
 GitHub: https://github.com/Ankitha09014
